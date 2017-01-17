@@ -1,0 +1,97 @@
+<head>
+	<title>Spelling Bee</title>
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+				{{>loginButtons}}
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-xs-12 col-md-9">
+				<div class="col-xs-12">
+					<h1 class="main_title">Spelling Bee</h1>
+				</div>
+				<div class="col-xs-12">
+					{{>addWordForm}}
+				</div>
+
+				<div class="col-xs-12">
+					<div>
+						{{>SpellingBee}}
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-xs-12 col-md-3">
+				<h1>List of words</h1>
+				<div style="position:relative;">
+					<nav class="navbar navbar-default navbar-static" role="navigation" id="navbar-spy">
+						<div class="collapse navbar-collapse">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="#scroll-af">A-F</a></li>
+								<li><a href="#scroll-gl">G-L</a></li>
+								<li><a href="#scroll-ms">M-S</a></li>
+								<li><a href="#scroll-tz">T-Z</a></li>
+							</ul>
+						</div>
+					</nav>
+					<div data-target="#navbar-spy" data-spy="scroll" style="height:350px; overflow-x:scroll; position:relative;">
+						<div id="scroll-af" class="letter">
+							{{>wordOnly}}
+						</div>
+						<div id="scroll-gl">
+						</div>
+						<div id="scroll-ms">
+						</div>
+						<div id="scroll-tz">
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+
+		
+	</div>
+
+</body>
+
+<template name="SpellingBee">
+	<h3 class="main_word">{{dashedWord}}</h3> 
+	<h4 class="part_of_speech">{{words.partOfSpeech}}</h4>
+	<h4 class="definition">{{words.definition}}</h4>
+	<h4 class="example">{{words.example}}</h4>
+</template>
+
+<template name="wordOnly">
+	{{#each justWord}}
+		<h3 class="dash">{{word}}</h3> 
+	{{/each}}
+	{{#if currentUser}}
+		<hr>
+		<button class="remove btn btn-default">Remove {{>removeOneWord}}</button>
+						 
+	{{/if}}
+</template>
+
+<template name="addWordForm">
+	{{#if currentUser}}
+		<form class="dash">
+			<input type="text" name="wordName" placeholder=" word">
+			<input type="submit" value="Add word" class="btn btn-default"> 
+		</form>
+	{{/if}}
+	<hr>
+</template>
+
+<template name="removeOneWord">
+	{{#if currentUser}}
+		{{remove.word}}
+	{{/if}}
+</template>

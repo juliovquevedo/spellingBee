@@ -1,0 +1,44 @@
+/*.main_title {
+	font-size: 70px;
+}*/
+
+.main_word {
+	font-size: 70px;
+	font-weight: bold;
+	text-align: justify;
+}
+
+.definition {
+	/*color: red;*/
+	font-size: 30px;
+}
+
+.example {
+	color: gray;
+	margin-left: 15px;
+	font-size: 25px;
+}
+
+.part_of_speech {
+	margin-top: 45px;
+}
+
+body {
+	padding-top: 40px;
+	/*background-color: #8e021d;*/
+	/*background-color: #AEC6CF;*/
+	/*background-color: #4d6376;*/
+	/*background-color: #f7cdd7;*/
+	/*background-color: #c2e6ff;*/
+	/*background-color: #333300;*/
+	/*background-color: #220022;*/
+	background-color: #002222;
+	/*background-color: #bbddbb;*/
+	/*background-color: #bbbbdd;*/
+	/*background-color: #ddbbbb;*/
+	color: white;
+}
+
+form {
+	color: black;
+}
