@@ -40,26 +40,14 @@
 							</ul>
 						</div>
 					</nav>
-					<div data-target="#navbar-spy" data-spy="scroll" style="height:350px; overflow-x:scroll; position:relative;">
-						<div id="scroll-af" class="letter">
-							{{>wordOnly}}
-						</div>
-						<div id="scroll-gl">
-						</div>
-						<div id="scroll-ms">
-						</div>
-						<div id="scroll-tz">
-						</div>
-					</div>
-					
+
+					{{>wordOnly}}
+
 				</div>
 			</div>
 		</div>
 
-
-		
 	</div>
-
 </body>
 
 <template name="SpellingBee">
@@ -70,13 +58,21 @@
 </template>
 
 <template name="wordOnly">
-	{{#each justWord}}
-		<h3 class="dash">{{word}}</h3> 
-	{{/each}}
+	<div data-target="#navbar-spy" data-spy="scroll" style="height:400px; overflow-x:scroll; position:relative;">
+		<div id="scroll-af" class="letter">
+			{{#each justWord}}
+				<h3 class="dash">{{word}}</h3> 
+			{{/each}}
+		</div>
+		<div id="scroll-gl">
+		</div>
+		<div id="scroll-ms">
+		</div>
+		<div id="scroll-tz">
+		</div>
+	</div>
 	{{#if currentUser}}
-		<hr>
 		<button class="remove btn btn-default">Remove {{>removeOneWord}}</button>
-						 
 	{{/if}}
 </template>
 
