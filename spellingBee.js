@@ -123,6 +123,15 @@ if(Meteor.isClient){
 			event.target.wordName.value = "";
 		}
 	});
+
+
+	
+	Template.numberOfWords.helpers({
+		'number': function(){
+			console.log(WordList.find().count());
+			return WordList.find().count();
+		}
+	});
 }
 
 if(Meteor.isServer){

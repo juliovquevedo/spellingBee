@@ -28,7 +28,7 @@
 			</div>
 			
 			<div class="col-xs-12 col-md-3">
-				<h1>List of words</h1>
+				<h1>List of words {{>numberOfWords}}</h1>
 				<div style="position:relative;">
 					<nav class="navbar navbar-default navbar-static" role="navigation" id="navbar-spy">
 						<div class="collapse navbar-collapse">
@@ -90,4 +90,8 @@
 	{{#if currentUser}}
 		{{remove.word}}
 	{{/if}}
+</template>
+
+<template name="numberOfWords">
+	{{number}}
 </template>
